@@ -1,0 +1,60 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="cex.css">
+</head>
+<script language="JavaScript">
+	function euroConverter(){
+		document.converter.dollar.value = document.converter.euro.value * 1.06;
+		document.converter.bath.value = document.converter.euro.value * 37.22;
+		document.converter.yen.value = document.converter.euro.value * 120.11;
+	}
+	function dollarConverter(){
+		document.converter.euro.value = document.converter.dollar.value * 0.94;
+		document.converter.bath.value = document.converter.dollar.value * 35.02;
+		document.converter.yen.value = document.converter.dollar.value * 113.10;
+	}
+	function yenConverter(){
+		document.converter.dollar.value = document.converter.yen.value * 0.0083;
+		document.converter.bath.value = document.converter.yen.value * 0.31;
+		document.converter.euro.value = document.converter.yen.value * 0.0088;
+	}
+	function bathConverter(){
+		document.converter.dollar.value = document.converter.bath.value * 0.029;
+		document.converter.yen.value = document.converter.bath.value * 3.23;
+		document.converter.euro.value = document.converter.bath.value * 0.03;
+	}
+</script>
+<body>
+	<div class="container">
+	<form name="converter">
+		<div style="margin-bottom: 50px;padding-top:130px;">Currency Exchange</div>
+		<div class="group">
+			<input class="btn-style" type="text" name="bath" onChange="bathConverter()">
+			<span class="hightlight"></span>
+			<span class="bar"></span>
+			<label>BATH</label>
+		</div>
+		<div class="group" style=>
+			<input class="btn-style" type="text" name="euro" onChange="euroConverter()" >
+			<span class="hightlight"></span>
+			<span class="bar"></span>
+			<label>EURO</label>
+		</div>
+		<div class="group">
+			<input class="btn-style" type="text" name="dollar" onChange="dollarConverter()"/>
+			<span class="hightlight"></span>
+			<span class="bar"></span>
+			<label>DOLLAR</label>
+		</div>
+		<div class="group">
+			<input class="btn-style" type="text" name="yen" onChange="yenConverter()" />
+			<span class="hightlight"></span>
+			<span class="bar"></span>
+			<label>YEN</label>
+		</div>
+		<input type="button" value="Convert."/>
+	</form>
+</div>
+</body>
+</html>
